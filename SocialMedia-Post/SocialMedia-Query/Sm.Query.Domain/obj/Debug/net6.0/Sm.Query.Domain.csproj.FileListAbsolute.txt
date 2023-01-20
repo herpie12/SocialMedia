@@ -1,0 +1,12 @@
+C:\Development\SocialMedia\SocialMedia-Post\SocialMedia-Query\Sm.Query.Domain\bin\Debug\net6.0\Sm.Query.Domain.deps.json
+C:\Development\SocialMedia\SocialMedia-Post\SocialMedia-Query\Sm.Query.Domain\bin\Debug\net6.0\Sm.Query.Domain.dll
+C:\Development\SocialMedia\SocialMedia-Post\SocialMedia-Query\Sm.Query.Domain\bin\Debug\net6.0\ref\Sm.Query.Domain.dll
+C:\Development\SocialMedia\SocialMedia-Post\SocialMedia-Query\Sm.Query.Domain\bin\Debug\net6.0\Sm.Query.Domain.pdb
+C:\Development\SocialMedia\SocialMedia-Post\SocialMedia-Query\Sm.Query.Domain\obj\Debug\net6.0\Sm.Query.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Development\SocialMedia\SocialMedia-Post\SocialMedia-Query\Sm.Query.Domain\obj\Debug\net6.0\Sm.Query.Domain.AssemblyInfoInputs.cache
+C:\Development\SocialMedia\SocialMedia-Post\SocialMedia-Query\Sm.Query.Domain\obj\Debug\net6.0\Sm.Query.Domain.AssemblyInfo.cs
+C:\Development\SocialMedia\SocialMedia-Post\SocialMedia-Query\Sm.Query.Domain\obj\Debug\net6.0\Sm.Query.Domain.csproj.CoreCompileInputs.cache
+C:\Development\SocialMedia\SocialMedia-Post\SocialMedia-Query\Sm.Query.Domain\obj\Debug\net6.0\Sm.Query.Domain.dll
+C:\Development\SocialMedia\SocialMedia-Post\SocialMedia-Query\Sm.Query.Domain\obj\Debug\net6.0\ref\Sm.Query.Domain.dll
+C:\Development\SocialMedia\SocialMedia-Post\SocialMedia-Query\Sm.Query.Domain\obj\Debug\net6.0\Sm.Query.Domain.pdb
+C:\Development\SocialMedia\SocialMedia-Post\SocialMedia-Query\Sm.Query.Domain\obj\Debug\net6.0\Sm.Query.Domain.csproj.AssemblyReference.cache

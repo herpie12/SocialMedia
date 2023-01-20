@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "djm2NSYGIfQFZOEkp0wuR75VI1R732Y3G8MCrk+AYM8=",
+  "Source": "Sm.Query.Api",
+  "BasePath": "_content/Sm.Query.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

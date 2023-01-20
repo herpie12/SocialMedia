@@ -1,0 +1,11 @@
+C:\Development\SocialMedia\SocialMedia-Post\SocialMedia-Cmd\Post.Cmd.Infrastructure\bin\Debug\net6.0\Post.Cmd.Infrastructure.deps.json
+C:\Development\SocialMedia\SocialMedia-Post\SocialMedia-Cmd\Post.Cmd.Infrastructure\bin\Debug\net6.0\Post.Cmd.Infrastructure.dll
+C:\Development\SocialMedia\SocialMedia-Post\SocialMedia-Cmd\Post.Cmd.Infrastructure\bin\Debug\net6.0\ref\Post.Cmd.Infrastructure.dll
+C:\Development\SocialMedia\SocialMedia-Post\SocialMedia-Cmd\Post.Cmd.Infrastructure\bin\Debug\net6.0\Post.Cmd.Infrastructure.pdb
+C:\Development\SocialMedia\SocialMedia-Post\SocialMedia-Cmd\Post.Cmd.Infrastructure\obj\Debug\net6.0\Post.Cmd.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Development\SocialMedia\SocialMedia-Post\SocialMedia-Cmd\Post.Cmd.Infrastructure\obj\Debug\net6.0\Post.Cmd.Infrastructure.AssemblyInfoInputs.cache
+C:\Development\SocialMedia\SocialMedia-Post\SocialMedia-Cmd\Post.Cmd.Infrastructure\obj\Debug\net6.0\Post.Cmd.Infrastructure.AssemblyInfo.cs
+C:\Development\SocialMedia\SocialMedia-Post\SocialMedia-Cmd\Post.Cmd.Infrastructure\obj\Debug\net6.0\Post.Cmd.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Development\SocialMedia\SocialMedia-Post\SocialMedia-Cmd\Post.Cmd.Infrastructure\obj\Debug\net6.0\Post.Cmd.Infrastructure.dll
+C:\Development\SocialMedia\SocialMedia-Post\SocialMedia-Cmd\Post.Cmd.Infrastructure\obj\Debug\net6.0\ref\Post.Cmd.Infrastructure.dll
+C:\Development\SocialMedia\SocialMedia-Post\SocialMedia-Cmd\Post.Cmd.Infrastructure\obj\Debug\net6.0\Post.Cmd.Infrastructure.pdb
