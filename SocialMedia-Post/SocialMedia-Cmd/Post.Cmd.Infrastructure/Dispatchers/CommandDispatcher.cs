@@ -20,7 +20,7 @@ namespace Post.Cmd.Infrastructure.Dispatchers
         {
             if (_handlers.TryGetValue(command.GetType(), out Func<BaseCommand, Task> handler))
             {
-               await handler(command);  
+                await handler(command);
             }
             else
             {

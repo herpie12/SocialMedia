@@ -2,7 +2,7 @@
 
 namespace Post.Commen.Events
 {
-    public class PostCreatedEvent: BaseEvent
+    public class PostCreatedEvent : BaseEvent
     {
         public PostCreatedEvent() : base(nameof(PostCreatedEvent))
         {
