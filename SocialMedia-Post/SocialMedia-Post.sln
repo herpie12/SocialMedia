@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Post.Cmd.Infrastructure", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SocialMedia-Commen", "SocialMedia-Commen", "{E7A0F3BD-B787-426B-B681-061AD2F63B87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Post.Commen", "Post.Commen\Post.Commen.csproj", "{043A9BBA-E1BC-46B9-BD87-8F9935BEB3A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Post.Commen", "Post.Commen\Post.Commen.csproj", "{043A9BBA-E1BC-46B9-BD87-8F9935BEB3A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

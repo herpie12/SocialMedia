@@ -7,6 +7,6 @@ namespace Post.Commen.Events
         public CommentRemoveEvent() : base(nameof(CommentRemoveEvent))
         {
         }
-        public string CommentId { get; set; }
+        public Guid CommentId { get; set; }
     }
 }
