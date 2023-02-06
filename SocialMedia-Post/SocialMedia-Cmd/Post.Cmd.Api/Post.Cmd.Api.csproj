@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\CQRS-Es\CQRS.Core\CQRS.Core.csproj" />
+    <ProjectReference Include="..\Post.Cmd.Infrastructure\Post.Cmd.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
