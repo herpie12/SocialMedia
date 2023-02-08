@@ -5,6 +5,6 @@ namespace CQRS.Core.Infrastructure
     public interface IEventStore
     {
         Task SaveEventAsync(Guid aggregateId, IEnumerable<BaseEvent> events, int expectedVersion);
-        Task<List<BaseEvent>> GetEvents(Guid aggregateId);
+        Task<List<BaseEvent>> GetByIdAsync(Guid aggregateId);
     }
 }
