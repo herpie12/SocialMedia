@@ -7,7 +7,7 @@ namespace CQRS.Core.Events
         [BsonId]
         [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
         public string Id { get; set; }
-        public DateTime TimeStap { get; set; }
+        public DateTime Timestamp { get; set; }
         public Guid AggregateIdentifier { get; set; }
         public string AggregateType { get; set; }
         public int Version { get; set; }
