@@ -60,3 +60,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+
+//Add to ReadMe: change legacy UUID to c# NET encoding in Studio 3T for mongoDB: "Edit > Preferences" > tab "Legacy UUID"
