@@ -1,6 +1,6 @@
 ﻿namespace Post.Cmd.Api.Commands
 {
-    public interface IcommandHandler
+    public interface ICommandHandler
     {
         Task HandleAsync(NewPostCommand command);
         Task HandleAsync(RemoveCommentCommand command);

@@ -29,9 +29,9 @@ namespace Post.Cmd.Infrastructure.Store
 
         public async Task SaveEventAsync(Guid aggregateId, IEnumerable<BaseEvent> events, int expectedVersion)
         {
-            var eventStrem = await _eventStoreRepository.FindByAggregateId(aggregateId);
+            var eventsteam = await _eventStoreRepository.FindByAggregateId(aggregateId);
 
-            if (expectedVersion != -1 || eventStrem[^1].Version != expectedVersion)
+            if (expectedVersion != -1 && eventsteam[^1].Version != expectedVersion)
             {
                 throw new ConcurrencyException();
             }
