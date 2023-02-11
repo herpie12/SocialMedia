@@ -54,6 +54,34 @@ namespace Post.Cmd.Api.Controllers
                     Message = Safe_Error_Message
                 });
             }
+        }
+
+
+        [HttpPut("id")]
+        public async Task<ActionResult> AddCommentAsynx(Guid id, AddCommentCommand command)
+        {
+            try
+            {
+                command.Id = id;
+
+                await _commandDispatcher.SendAsync(command);
+
+                return StatusCode(StatusCodes.Status201Created, new NewPostResponse
+                {
+                    Message = "Comment has been added"
+                });
+            }
+            catch (Exception ex)
+            {
+                const string Safe_Error_Message = "Error while processing request to create a new post!";
+                _logger.Log(LogLevel.Error, Safe_Error_Message, ex);
+
+                return StatusCode(StatusCodes.Status500InternalServerError, new NewPostResponse
+                {
+                    Id = id,
+                    Message = Safe_Error_Message
+                });
+            }
 
         }
     }
