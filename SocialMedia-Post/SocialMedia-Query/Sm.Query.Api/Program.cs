@@ -1,6 +1,17 @@
+using Microsoft.EntityFrameworkCore;
+using Sm.Query.Infrastructure.DataContext;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+Action<DbContextOptionsBuilder> configureDbContext = (o => o.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("SocialMediaDb")));
+builder.Services.AddDbContext<DatabaseContext>(configureDbContext);
+builder.Services.AddSingleton<DatabaseContextFactory>(new DatabaseContextFactory(configureDbContext));
+
+var databaseContext = builder.Services.BuildServiceProvider().GetRequiredService<DatabaseContext>();
+databaseContext.Database.EnsureCreated();
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

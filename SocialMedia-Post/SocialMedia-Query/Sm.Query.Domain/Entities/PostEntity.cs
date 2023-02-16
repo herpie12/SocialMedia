@@ -8,7 +8,6 @@ namespace Sm.Query.Domain.Entities
     {
         [Key]
         public Guid PostId { get; set; }
-
         public string Author { get; set; }
         public DateTime DatePosted { get; set; }
         public int Likes { get; set; }
