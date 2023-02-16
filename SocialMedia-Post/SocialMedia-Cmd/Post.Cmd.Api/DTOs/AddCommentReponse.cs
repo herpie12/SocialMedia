@@ -2,7 +2,7 @@
 
 namespace Post.Cmd.Api.DTOs
 {
-    public class AddCommentReponse: BaseReponse
+    public class AddCommentReponse : BaseReponse
     {
         public Guid Id { get; set; }
     }

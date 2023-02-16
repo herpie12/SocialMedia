@@ -6,7 +6,7 @@ using CQRS.Core.Producers;
 using Post.Cmd.Domain.Aggregates;
 
 namespace Post.Cmd.Infrastructure.Store
-{   
+{
     public class EventStore : IEventStore
     {
         private readonly IEventStoreRepository _eventStoreRepository;
