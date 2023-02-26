@@ -10,7 +10,7 @@ namespace Sm.Query.Infrastructure.Repositories
 
         public PostRepository(DatabaseContextFactory databaseContextFactory)
         {
-            _databaseContextFactory = databaseContextFactory; 
+            _databaseContextFactory = databaseContextFactory;
         }
 
         public async Task CreateAsync(PostEntity post)
@@ -30,7 +30,7 @@ namespace Sm.Query.Infrastructure.Repositories
 
             context.Posts.Remove(post);
 
-            _ = await context.SaveChangesAsync();   
+            _ = await context.SaveChangesAsync();
         }
 
         public async Task<PostEntity> GetByIdAsync(Guid postId)
@@ -52,7 +52,7 @@ namespace Sm.Query.Infrastructure.Repositories
             using DatabaseContext context = _databaseContextFactory.CreateDbContext();
             return await context.Posts.AsNoTracking()
                   .Include(p => p.Comments).AsNoTracking()
-                  .Where(x=> x.Author.Contains(author))
+                  .Where(x => x.Author.Contains(author))
                   .ToListAsync();
         }
 
@@ -60,7 +60,7 @@ namespace Sm.Query.Infrastructure.Repositories
         {
             using DatabaseContext context = _databaseContextFactory.CreateDbContext();
             return await context.Posts.AsNoTracking()
-                  .Include(p => p.Comments).AsNoTracking().Where(x=> x!=null && x.Comments.Any())
+                  .Include(p => p.Comments).AsNoTracking().Where(x => x != null && x.Comments.Any())
                   .ToListAsync();
         }
 
