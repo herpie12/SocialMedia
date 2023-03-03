@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Post.Commen\Post.Commen.csproj" />
     <ProjectReference Include="..\Sm.Query.Domain\Sm.Query.Domain.csproj" />
   </ItemGroup>
 

@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
+using Sm.Query.Domain.Repositories;
 using Sm.Query.Infrastructure.DataContext;
+using Sm.Query.Infrastructure.Handlers;
+using Sm.Query.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +11,10 @@ var builder = WebApplication.CreateBuilder(args);
 Action<DbContextOptionsBuilder> configureDbContext = (o => o.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("SocialMediaDb")));
 builder.Services.AddDbContext<DatabaseContext>(configureDbContext);
 builder.Services.AddSingleton<DatabaseContextFactory>(new DatabaseContextFactory(configureDbContext));
+
+builder.Services.AddScoped<IPostRepository, PostRepository>();
+builder.Services.AddScoped<ICommentRepository, CommentRepository>();
+builder.Services.AddScoped<IEventHandler, Sm.Query.Infrastructure.Handlers.EventHandler>();
 
 var databaseContext = builder.Services.BuildServiceProvider().GetRequiredService<DatabaseContext>();
 databaseContext.Database.EnsureCreated();
