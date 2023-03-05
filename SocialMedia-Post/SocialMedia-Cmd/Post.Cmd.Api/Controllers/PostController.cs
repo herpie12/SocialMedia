@@ -8,12 +8,12 @@ namespace Post.Cmd.Api.Controllers
 {
     [Route("api/v1/[controller]")]
     [ApiController]
-    public class NewPostController : ControllerBase
+    public class PostController : ControllerBase
     {
-        private readonly ILogger<NewPostController> _logger;
+        private readonly ILogger<PostController> _logger;
         private readonly ICommandDispatcher _commandDispatcher;
 
-        public NewPostController(ILogger<NewPostController> logger, ICommandDispatcher commandDispatcher)
+        public PostController(ILogger<PostController> logger, ICommandDispatcher commandDispatcher)
         {
             _logger = logger;
             _commandDispatcher = commandDispatcher;
@@ -57,7 +57,7 @@ namespace Post.Cmd.Api.Controllers
         }
 
 
-        [HttpPut("id")]
+        [HttpPut("addcomment/id")]
         public async Task<ActionResult> AddCommentAsynx(Guid id, AddCommentCommand command)
         {
             try
@@ -73,7 +73,7 @@ namespace Post.Cmd.Api.Controllers
             }
             catch (Exception ex)
             {
-                const string Safe_Error_Message = "Error while processing request to create a new post!";
+                const string Safe_Error_Message = "Error while processing request, to add comment!";
                 _logger.Log(LogLevel.Error, Safe_Error_Message, ex);
 
                 return StatusCode(StatusCodes.Status500InternalServerError, new NewPostResponse
