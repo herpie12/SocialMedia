@@ -5,7 +5,6 @@ namespace Sm.Query.Infrastructure.Handlers
     public interface IEventHandler
     {
         Task On(PostCreatedEvent postCreatedEvent);
-
         Task On(MessageUpdatedEvent messageUpdatedEvent);
         Task On(PostLikedEvent postLikedEvent);
         Task On(CommentAddedEvent commentAddedEvent);

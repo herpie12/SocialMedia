@@ -1,5 +1,8 @@
+using Confluent.Kafka;
+using CQRS.Core.Consumers;
 using Microsoft.EntityFrameworkCore;
 using Sm.Query.Domain.Repositories;
+using Sm.Query.Infrastructure.Consumers;
 using Sm.Query.Infrastructure.DataContext;
 using Sm.Query.Infrastructure.Handlers;
 using Sm.Query.Infrastructure.Repositories;
@@ -15,6 +18,10 @@ builder.Services.AddSingleton<DatabaseContextFactory>(new DatabaseContextFactory
 builder.Services.AddScoped<IPostRepository, PostRepository>();
 builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 builder.Services.AddScoped<IEventHandler, Sm.Query.Infrastructure.Handlers.EventHandler>();
+builder.Services.Configure<ConsumerConfig>(builder.Configuration.GetSection(nameof(ConsumerConfig)));
+builder.Services.AddScoped<IEventConsumer, EventConsumer>();
+
+builder.Services.AddHostedService<ConsumerHostedService>();
 
 var databaseContext = builder.Services.BuildServiceProvider().GetRequiredService<DatabaseContext>();
 databaseContext.Database.EnsureCreated();
