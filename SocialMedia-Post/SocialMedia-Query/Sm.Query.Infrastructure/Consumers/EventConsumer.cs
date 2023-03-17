@@ -20,10 +20,10 @@ namespace Sm.Query.Infrastructure.Consumers
         }
         public void Consume(string topic)
         {
-           using var consumer = new ConsumerBuilder<string, string>(_consumerConfig)
-                .SetKeyDeserializer(Deserializers.Utf8)
-                .SetValueDeserializer(Deserializers.Utf8)
-                .Build();
+            using var consumer = new ConsumerBuilder<string, string>(_consumerConfig)
+                 .SetKeyDeserializer(Deserializers.Utf8)
+                 .SetValueDeserializer(Deserializers.Utf8)
+                 .Build();
 
             consumer.Subscribe(topic);
 
