@@ -29,32 +29,41 @@ namespace Sm.Query.Infrastructure.Consumers
 
             while (true)
             {
-                var consumeResult = consumer.Consume();
-
-                if (consumeResult?.Message == null) continue;
-
-                var options = new JsonSerializerOptions
+                try
                 {
-                    Converters = { new EventJsonConverter() }
-                };
+                    var consumeResult = consumer.Consume();
 
-                var @event = JsonSerializer.Deserialize<BaseEvent>(consumeResult.Message.Value, options);
+                    if (consumeResult?.Message == null) continue;
 
-                //Retrive method from eventhandler which name is: On, based on the event coming in.
-                var handlerMethod = _eventHandler.GetType().GetMethod("On", new Type[]
-                {
+                    var options = new JsonSerializerOptions
+                    {
+                        Converters = { new EventJsonConverter() }
+                    };
+
+                    var @event = JsonSerializer.Deserialize<BaseEvent>(consumeResult.Message.Value, options);
+
+                    //Retrive method from eventhandler which name is: On, based on the event coming in.
+                    var handlerMethod = _eventHandler.GetType().GetMethod("On", new Type[]
+                    {
                     @event.GetType()
-                });
+                    });
 
-                if (handlerMethod != null)
+                    if (handlerMethod == null)
+                    {
+                        throw new ArgumentException(nameof(handlerMethod), "could not find event handler method!");
+                    }
+
+                    //Invoke the matching method in the eventhandler
+                    handlerMethod.Invoke(_eventHandler, new object[] { @event });
+
+                    consumer.Commit(consumeResult);
+                }
+                catch (Exception ex)
                 {
-                    throw new ArgumentException(nameof(handlerMethod), "could not find event handler method!");
+
+                    throw;
                 }
 
-                //Invoke the matching method in the eventhandler
-                handlerMethod.Invoke(_eventHandler, new object[] { @event });
-
-                consumer.Commit(consumeResult);
             }
         }
     }

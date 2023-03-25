@@ -40,8 +40,9 @@ builder.Services.AddSingleton<IQueryDispatcher<PostEntity>>(_ => dispatcher);
 builder.Services.AddHostedService<ConsumerHostedService>();
 
 var databaseContext = builder.Services.BuildServiceProvider().GetRequiredService<DatabaseContext>();
-databaseContext.Database.EnsureCreated();
+//databaseContext.Database.EnsureCreated();
 
+builder.Services.AddRouting(options => options.LowercaseUrls = true);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

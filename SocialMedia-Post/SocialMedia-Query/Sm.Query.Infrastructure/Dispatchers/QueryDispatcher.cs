@@ -24,7 +24,7 @@ namespace Sm.Query.Infrastructure.Dispatchers
                 return await handler(query);
             }
 
-            throw new ArgumentNullException(nameof(handler),"No query handler was registered!");
+            throw new ArgumentNullException(nameof(handler), "No query handler was registered!");
         }
     }
 }

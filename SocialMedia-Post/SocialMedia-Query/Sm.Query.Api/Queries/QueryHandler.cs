@@ -26,7 +26,7 @@ namespace Sm.Query.Api.Queries
         {
             var post = await _postRepository.GetByIdAsync(query.Id);
 
-            return new List<PostEntity>{ post };
+            return new List<PostEntity> { post };
         }
 
         public async Task<List<PostEntity>> HandlerAsync(FindPostsWithCommentsQuery query)
