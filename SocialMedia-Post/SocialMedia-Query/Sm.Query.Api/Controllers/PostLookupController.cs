@@ -85,5 +85,37 @@ namespace Sm.Query.Api.Controllers
                 });
             }
         }
+
+        [HttpGet("getPostsWithComments")]
+        public async Task<ActionResult> GetPostsWithCommentsAsync()
+        {
+            try
+            {
+                var postsWithComments = await _queryDispatcher.SendAsync(new FindPostsWithCommentsQuery());
+
+                if (postsWithComments == null || !postsWithComments.Any())
+                {
+                    return NoContent();
+                }
+
+                return Ok(new PostLookupResponse
+                {
+                    Posts = postsWithComments,
+                    Message = $"Successfully returned post with comments"
+                });
+
+            }
+            catch (Exception ex)
+            {
+
+                const string errmsg = "Error while processing request, find posts with comments!";
+                _logger.LogError(ex, errmsg);
+
+                return StatusCode(500, new BaseReponse
+                {
+                    Message = errmsg,
+                });
+            }
+        }
     }
 }

@@ -3,6 +3,7 @@ using CQRS.Core.Domain.Repos;
 using CQRS.Core.Handlers;
 using CQRS.Core.Infrastructure;
 using CQRS.Core.Producers;
+using MongoDB.Bson;
 using Post.Cmd.Api.Commands;
 using Post.Cmd.Domain.Aggregates;
 using Post.Cmd.Infrastructure.Config;
@@ -13,6 +14,8 @@ using Post.Cmd.Infrastructure.Repository;
 using Post.Cmd.Infrastructure.Store;
 
 var builder = WebApplication.CreateBuilder(args);
+
+BsonDefaults.GuidRepresentation = GuidRepresentation.Standard;
 
 // Add services to the container.
 builder.Services.Configure<MongoDbConfig>(builder.Configuration.GetSection(nameof(MongoDbConfig)));
