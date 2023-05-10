@@ -56,7 +56,7 @@ namespace Post.Cmd.Domain.Aggregates
             _id = @event.Id;
         }
 
-        public void LikePost()
+        public void LikePost(string likedByUsername)
         {
             if (!_active)
             {
@@ -66,6 +66,7 @@ namespace Post.Cmd.Domain.Aggregates
             RaiseEvent(new PostLikedEvent
             {
                 Id = _id,
+                LikedByUsername = likedByUsername,
             });
         }
 

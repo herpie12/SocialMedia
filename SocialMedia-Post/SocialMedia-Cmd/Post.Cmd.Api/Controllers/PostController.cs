@@ -57,7 +57,7 @@ namespace Post.Cmd.Api.Controllers
         }
 
         [HttpPut("addcomment/id")]
-        public async Task<ActionResult> AddCommentAsynx(Guid id, AddCommentCommand command)
+        public async Task<ActionResult> AddCommentAsync(Guid id, AddCommentCommand command)
         {
             try
             {
@@ -81,7 +81,33 @@ namespace Post.Cmd.Api.Controllers
                     Message = Safe_Error_Message
                 });
             }
+        }
 
+        [HttpPut("likePost/id")]
+        public async Task<ActionResult> LikePost(Guid id, LikePostCommand command)
+        {
+            try
+            {
+                command.Id = id;
+
+                await _commandDispatcher.SendAsync(command);
+
+                return StatusCode(StatusCodes.Status201Created, new NewPostResponse
+                {
+                    Message = "Post has been liked"
+                });
+            }
+            catch (Exception ex)
+            {
+                const string Safe_Error_Message = "Error while processing request, to like post!";
+                _logger.Log(LogLevel.Error, Safe_Error_Message, ex);
+
+                return StatusCode(StatusCodes.Status500InternalServerError, new NewPostResponse
+                {
+                    Id = id,
+                    Message = Safe_Error_Message
+                });
+            }
         }
     }
 }

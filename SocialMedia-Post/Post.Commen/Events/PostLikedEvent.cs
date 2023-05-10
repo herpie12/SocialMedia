@@ -7,5 +7,7 @@ namespace Post.Commen.Events
         public PostLikedEvent() : base(nameof(PostLikedEvent))
         {
         }
+
+        public string LikedByUsername { get; set; }
     }
 }

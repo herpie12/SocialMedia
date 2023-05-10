@@ -29,7 +29,7 @@ namespace Post.Cmd.Api.Commands
         public async Task HandleAsync(LikePostCommand command)
         {
             var aggregate = await _eventSourcingHandler.GetByIdAsync(command.Id);
-            aggregate.LikePost();
+            aggregate.LikePost(command.LikedByUsername);
 
             await _eventSourcingHandler.SaveAsync(aggregate);
         }
