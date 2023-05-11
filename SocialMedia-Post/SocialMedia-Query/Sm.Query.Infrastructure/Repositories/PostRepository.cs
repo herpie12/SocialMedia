@@ -68,7 +68,7 @@ namespace Sm.Query.Infrastructure.Repositories
         {
             using DatabaseContext context = _databaseContextFactory.CreateDbContext();
             return await context.Posts.AsNoTracking()
-                  .Include(p => p.Likes).AsNoTracking().Where(x => x.Likes >= numberOfLikes)
+                  .Include(p => p.Comments).AsNoTracking().Where(x => x.Likes > numberOfLikes)
                   .ToListAsync();
         }
 

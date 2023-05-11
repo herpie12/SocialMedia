@@ -117,5 +117,37 @@ namespace Sm.Query.Api.Controllers
                 });
             }
         }
+        [HttpGet("getPostsWithLikes")]
+        public async Task<ActionResult> GetPostsWithLikes(int numbersOfLikes)
+        {
+            try
+            {
+                var postWithLikes = await _queryDispatcher.SendAsync(new FindPostsWithLikesQuery());
+
+                if (postWithLikes == null || !postWithLikes.Any())
+                {
+                    return NoContent();
+                }
+
+                return Ok(new PostLookupResponse
+                {
+                    Posts = postWithLikes,
+                    Message = $"Successfully returned posts with likes"
+                });
+
+            }
+            catch (Exception ex)
+            {
+
+                const string errmsg = "Error while processing request, find posts with likes!";
+                _logger.LogError(ex, errmsg);
+
+                return StatusCode(500, new BaseReponse
+                {
+                    Message = errmsg,
+                });
+            }
+        }
+
     }
 }
