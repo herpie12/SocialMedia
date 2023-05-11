@@ -53,7 +53,6 @@ namespace Sm.Query.Api.Controllers
             }
         }
 
-
         [HttpGet("postId")]
         public async Task<ActionResult> GetPostByIdAsync(Guid postId)
         {
@@ -117,6 +116,7 @@ namespace Sm.Query.Api.Controllers
                 });
             }
         }
+
         [HttpGet("getPostsWithLikes")]
         public async Task<ActionResult> GetPostsWithLikes(int numbersOfLikes)
         {
@@ -148,6 +148,5 @@ namespace Sm.Query.Api.Controllers
                 });
             }
         }
-
     }
 }
